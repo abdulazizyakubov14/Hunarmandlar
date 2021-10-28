@@ -92,7 +92,7 @@
 	<div class="container-fluid">
 	  <div class="row registr_page_row">
 	  	<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-3">
-	  	  <form>
+	  	  <form method="POST">
 	  	  	<div class="row">
 	  	  	<div class="col-12 text-center">
 	  	  	  <h1 class="registr_title">
@@ -101,18 +101,19 @@
 	  	  	</div>
 	  	  	<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12 forms">
 	  	  	  <label>Ism</label>
-	  	  	  <input type="text" id="inputName" placeholder="Ismingizni kiritin" pattern="[a-z,A-Z]{1,}" required>
+	  	  	 {{form.login}}
 	  	  	</div>
 
 	  	  	<div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12 forms ">
+            {% csrf_token %}
 	  	  	  <label>Telefon raqam</label>
-	  	  	  <input type="text" id="inputTell" placeholder="+998"pattern="[+998]{4}[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}" required>
+            {{form.password}}
 	  	  	</div>
                 <div class="social-login google ml-3">
                     <a href="{% provider_login_url "google" %}"  class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Google bilan kirish</span> </a>
                 </div>
                 <div class="social-login facebook ml-2">
-                    <a href="{% provider_login_url "google" %}"  class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook"></i> Facebook bilan kirish</span> </a>
+                    <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook"></i> Facebook bilan kirish</span> </a>
                 </div>
 	  	  	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  text-center"><br>
 	  	  	  <input type="submit" value="Ro'yhatdan o'ting" class="submit">

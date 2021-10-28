@@ -28,8 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost']
 
 
-# Application definition
-
+# Application definition mfo 01120 inn 200542744 tr 23120000500001120200
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
 
 ]
 
@@ -158,7 +159,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
